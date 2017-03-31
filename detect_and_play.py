@@ -65,6 +65,8 @@ while True:
 	hh2= cv2.getTrackbarPos('Hhigh','controller-2')
 	sh2= cv2.getTrackbarPos('Shigh','controller-2')
 	vh2= cv2.getTrackbarPos('Vhigh','controller-2')
+
+	print h1,s1,v1
 	end = time.time()
 	#print("Trackbars are read. Time:",(end-start))
 	#Create the kernel
