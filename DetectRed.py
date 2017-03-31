@@ -16,11 +16,13 @@ cv2.namedWindow('thresholded-2')
 cv2.namedWindow("temp")
 ST.SetTrackBarsRed()
 
-frame = vc.read()
 distance2Line = 0
 lastdistance = 0
 #Main Loop
-def FindRedObject(frame):
+def FindRedObject(frame,hsv):
+
+	## Get Threshold Parameters
+	## TODO: Get these parameters from calibration
 	hl= cv2.getTrackbarPos('Hlow','controller')
 	sl= cv2.getTrackbarPos('Slow','controller')
 	vl= cv2.getTrackbarPos('Vlow','controller')
@@ -28,23 +30,32 @@ def FindRedObject(frame):
 	sh= cv2.getTrackbarPos('Shigh','controller')
 	vh= cv2.getTrackbarPos('Vhigh','controller')
 
+	## Get Morphological Operation Kernel Size
 	ker_size=cv2.getTrackbarPos('Kernel Size','controller')
 
+
+	# Create the kernel 
 	h=np.kaiser(ker_size,1)
 	kernel=np.sqrt(np.outer(h,h))
 
+
+	# Create the low and high boundaries
 	low=np.array([hl,sl,vl], dtype=np.uint8) #Lower limits
 	high=np.array([hh,sh,vh], dtype=np.uint8) #Upper limits
 
+	# Threshold image
 	thresh=cv2.inRange(hsv, low, high) #Thresholded image
 
+	# Morphological Operations
 	thresh=cv2.erode(thresh,kernel,iterations=2)
 	thresh=cv2.dilate(thresh,kernel2,iterations=2)
 
+
+	# Detect Edges
 	edges = cv2.Canny(thresh,50,200)
 	contours,hierarchy = cv2.findContours(edges,cv2.RETR_LIST,cv2.CHAIN_APPROX_SIMPLE)
 
-
+	# Object Calculations starts here
 	try:
 		temp=frame.copy()
 		temp2=frame.copy()
@@ -63,13 +74,11 @@ def FindRedObject(frame):
 			temp=cv2.inRange(temp,np.array([250,0,0]),np.array([260,5,5]))
 		else:
 			temp=thresh.copy()
-#        print((contours))
 		
 		rect = cv2.minAreaRect(listed[0])
 
 		ellipse=cv2.fitEllipse(listed[0])
 
-		#print(ellipse)
 		# Take theta values from ellipse object
 		theta_rad = np.deg2rad(ellipse[2])
 		# Compose a unit vector for the line
@@ -90,16 +99,10 @@ def FindRedObject(frame):
 		else:
 			point1=point2_obj1
 		cv2.circle(frame,(int(point1[0]),int(point1[1])),10,(0,0,0))
-		#cv2.ellipse(frame,ellipse,(0,255,255),2)
-		#print("Line Length from Ellipse: ",length*2)
-		#print("Line Length from Rectangle:",norm(np.array(rect[0])-np.array(rect[1])))
-
+	
 		# Draw the line
 		A = cv2.line(frame,(int(point1_obj1[0]),int(point1_obj1[1])),(int(point2_obj1[0]),int(point2_obj1[1])),(255,255,0),2)
-		#print(A) 
+
 	except:
 		print("Object is not detected")
-	end = time.time()
-		#print(point1_obj1)
-
-		#print("1st object detected. Time:",(end-start))
+	#end = time.time()
