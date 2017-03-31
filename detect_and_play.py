@@ -37,17 +37,17 @@ lastdistance = 0
 while True:
 
 	start = time.time()
-	#frame=cv2.resize(frame,(320,240)) #Reduce the resolution
+	frame=cv2.resize(frame,(320,240)) #Reduce the resolution
 	zero_num=15 #zeros to be padded
-	#edges3 = cv2.Canny(frame,150,300)
+	edges3 = cv2.Canny(frame,150,300)
 ##    thresh=cv2.dilate(thresh,kernel2,iterations=2)
 
 
-	#frame = cv2.copyMakeBorder(frame,zero_num,zero_num,zero_num,zero_num,cv2.BORDER_CONSTANT,value=[0,0,0])
+	frame = cv2.copyMakeBorder(frame,zero_num,zero_num,zero_num,zero_num,cv2.BORDER_CONSTANT,value=[0,0,0])
 
 
-	#hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV) #BGR to HSV conversion
-	#end = time.time()
+	hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV) #BGR to HSV conversion
+	end = time.time()
 	#print("Borders and Conversions. Time:",(end-start))
 
 	# get current positions of trackbars 
