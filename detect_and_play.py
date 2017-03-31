@@ -6,13 +6,12 @@ import time
 import pylab
 from numpy import linalg
 from numpy.linalg import norm
-
+import SetTrackBar as ST
  
 ## Multithread camera is finished here.
 ## Anisi var lutfen silmeyiniz
 def nothing(x):
 	pass
-
 
 iLastX=-1
 iLastY=-1
@@ -24,48 +23,9 @@ cv2.namedWindow('controller-2')
 cv2.namedWindow('thresholded')
 cv2.namedWindow('thresholded-2')
 cv2.namedWindow("temp")
-
-#Kernel
-cv2.createTrackbar('Kernel Size','controller',1,15,nothing)
-cv2.setTrackbarPos('Kernel Size','controller',3)
-cv2.createTrackbar('Kernel2 Size','controller',1,15,nothing)
-cv2.setTrackbarPos('Kernel2 Size','controller',12)
-
-# create trackbars for 1st obj
-
-cv2.createTrackbar('Hlow','controller',0,179,nothing)
-cv2.createTrackbar('Hhigh','controller',0,179,nothing)
-
-cv2.createTrackbar('Slow','controller',0,255,nothing)
-cv2.createTrackbar('Shigh','controller',0,255,nothing)
-
-cv2.createTrackbar('Vlow','controller',0,255,nothing)
-cv2.createTrackbar('Vhigh','controller',0,255,nothing)
-
-cv2.setTrackbarPos('Hhigh','controller',179)
-cv2.setTrackbarPos('Shigh','controller',255)
-cv2.setTrackbarPos('Vhigh','controller',255)
-cv2.setTrackbarPos('Hlow','controller',145)
-cv2.setTrackbarPos('Vlow','controller',65)
-cv2.setTrackbarPos('Slow','controller',112)
-
-# Trackbars for second object
-
-cv2.createTrackbar('Hlow','controller-2',0,179,nothing)
-cv2.createTrackbar('Hhigh','controller-2',0,179,nothing)
-
-cv2.createTrackbar('Slow','controller-2',0,255,nothing)
-cv2.createTrackbar('Shigh','controller-2',0,255,nothing)
-
-cv2.createTrackbar('Vlow','controller-2',0,255,nothing)
-cv2.createTrackbar('Vhigh','controller-2',0,255,nothing)
-
-cv2.setTrackbarPos('Hhigh','controller-2',118)
-cv2.setTrackbarPos('Shigh','controller-2',255)
-cv2.setTrackbarPos('Vhigh','controller-2',255)
-cv2.setTrackbarPos('Hlow','controller-2',96)
-cv2.setTrackbarPos('Vlow','controller-2',118)
-cv2.setTrackbarPos('Slow','controller-2',112)
+ST.SetTrackBarsRed()
+ST.SetTrackBarsBlue()
+ST.SetTrackBarsKernel()
 
 #First Frame
 
@@ -79,17 +39,17 @@ lastdistance = 0
 while True:
 
 	start = time.time()
-	frame=cv2.resize(frame,(320,240)) #Reduce the resolution
+	#frame=cv2.resize(frame,(320,240)) #Reduce the resolution
 	zero_num=15 #zeros to be padded
 	#edges3 = cv2.Canny(frame,150,300)
 ##    thresh=cv2.dilate(thresh,kernel2,iterations=2)
 
 
-	frame = cv2.copyMakeBorder(frame,zero_num,zero_num,zero_num,zero_num,cv2.BORDER_CONSTANT,value=[0,0,0])
+	#frame = cv2.copyMakeBorder(frame,zero_num,zero_num,zero_num,zero_num,cv2.BORDER_CONSTANT,value=[0,0,0])
 
 
-	hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV) #BGR to HSV conversion
-	end = time.time()
+	#hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV) #BGR to HSV conversion
+	#end = time.time()
 	#print("Borders and Conversions. Time:",(end-start))
 
 	# get current positions of trackbars 
