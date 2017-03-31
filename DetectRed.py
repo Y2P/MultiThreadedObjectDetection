@@ -105,4 +105,6 @@ def FindRedObject(frame,hsv):
 
 	except:
 		print("Object is not detected")
+
+	return point1
 	#end = time.time()
