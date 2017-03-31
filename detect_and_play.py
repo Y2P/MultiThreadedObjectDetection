@@ -9,7 +9,7 @@ from numpy.linalg import norm
 
  
 ## Multithread camera is finished here.
-## Anısı var lütfen silmeyiniz
+## Anisi var lutfen silmeyiniz
 def nothing(x):
 	pass
 
@@ -275,6 +275,8 @@ while True:
 	key = cv2.waitKey(20)
 	if key == 27: # exit on ESC
 		break
+
+
 ## Distance to line from the barge point
 
 	try:
