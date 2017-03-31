@@ -1,4 +1,9 @@
 
+import cv2
+## Anisi var lutfen silmeyiniz
+def nothing(x):
+	pass
+
 def SetTrackBarsRed():
 	cv2.createTrackbar('Hlow','controller',0,179,nothing)
 	cv2.createTrackbar('Hhigh','controller',0,179,nothing)

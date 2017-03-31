@@ -9,9 +9,7 @@ from numpy.linalg import norm
 import SetTrackBar as ST
  
 ## Multithread camera is finished here.
-## Anisi var lutfen silmeyiniz
-def nothing(x):
-	pass
+
 
 iLastX=-1
 iLastY=-1
