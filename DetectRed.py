@@ -6,7 +6,7 @@ import pylab
 from numpy import linalg
 from numpy.linalg import norm
 import SetTrackBar as ST
-
+import detect_and_play
 #Windows
 cv2.namedWindow("Original Image")
 cv2.namedWindow('controller')
@@ -19,8 +19,8 @@ ST.SetTrackBarsRed()
 distance2Line = 0
 lastdistance = 0
 #Main Loop
-def FindRedObject(frame,hsv,point1):
-
+def FindRedObject(frame,hsv):
+	global RedList
 	## Get Threshold Parameters
 	## TODO: Get these parameters from calibration
 	hl= cv2.getTrackbarPos('Hlow','controller')
@@ -62,7 +62,7 @@ def FindRedObject(frame,hsv,point1):
 
 	# Object Calculations starts here
 	try:
-		
+
 		temp=frame.copy()
 		temp2=frame.copy()
 
@@ -105,11 +105,11 @@ def FindRedObject(frame,hsv,point1):
 		else:
 			point1=point2_obj1
 		cv2.circle(frame,(int(point1[0]),int(point1[1])),10,(0,0,0))
-	
+		RedList = point1
 		# Draw the line
 		A = cv2.line(frame,(int(point1_obj1[0]),int(point1_obj1[1])),(int(point2_obj1[0]),int(point2_obj1[1])),(255,255,0),2)
 	except:
 		print("Object is not detected")
-		point1 = 0;
+		RedList = 0;
 
 	#end = time.time()

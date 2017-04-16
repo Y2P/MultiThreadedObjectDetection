@@ -14,6 +14,8 @@ import DetectRed as DR
 import threading
 
 import OzHasekiSerial as Ser
+
+import 
 ## Multithread camera is finished here.
 
 
@@ -58,7 +60,7 @@ while True:
 
 	#Bthread = threading.Thread(target=DB.FindBlueObject,args=(frameb,hsvb,BlueList))
 	#Rthread = threading.Thread(target=DR.FindRedObject,args=(framer,hsvr,RedList))
-	DR.FindRedObject(framer,hsvr,RedList)
+	DR.FindRedObject(framer,hsvr)
 	#Bthread.start()
 	#Rthread.start()
 
