@@ -81,7 +81,7 @@ while True:
 		break
 
 
-	if(isinstance([], list))
+	if(isinstance([], list)):
 		print(ST.BlueList[0])
 
 ## Distance to line from the barge point
