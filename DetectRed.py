@@ -62,6 +62,7 @@ def FindRedObject(frame,hsv,point1):
 
 	# Object Calculations starts here
 	try:
+		
 		temp=frame.copy()
 		temp2=frame.copy()
 

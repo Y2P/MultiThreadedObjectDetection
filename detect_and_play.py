@@ -56,15 +56,13 @@ while True:
 	hsvr = deepcopy(hsv)
 	hsvb = deepcopy(hsv)
 
-
-
-	Bthread = threading.Thread(target=DB.FindBlueObject,args=(frameb,hsvb,BlueList))
+	#Bthread = threading.Thread(target=DB.FindBlueObject,args=(frameb,hsvb,BlueList))
 	Rthread = threading.Thread(target=DR.FindRedObject,args=(framer,hsvr,RedList))
 
-	Bthread.start()
+	#Bthread.start()
 	Rthread.start()
 
-	Bthread.join()
+	#Bthread.join()
 	Rthread.join()
 
 	print("Blue List: ",BlueList)
