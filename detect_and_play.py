@@ -44,10 +44,12 @@ while True:
 	frame = cv2.copyMakeBorder(frame,zero_num,zero_num,zero_num,zero_num,cv2.BORDER_CONSTANT,value=[0,0,0])
 	hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV) #BGR to HSV conversion
 	
+	#DetectBlue();
+	#DetectRed();
 ##### Threads are joined here. 
 
 ##### TODO: Threads will be created. 
-##### TODO: frame,hsv will be deep copied
+##### TODO: frame,hsv will be deepcopied
 ##### TODO: CPU Affinity will be researched
 
 ## New Frame is taken after all operations
