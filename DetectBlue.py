@@ -53,6 +53,7 @@ def FindBlueObject(frame,hsv):
 	# Morphological Operations
 	thresh=cv2.erode(thresh,kernel,iterations=2)
 	thresh=cv2.dilate(thresh,kernel2,iterations=2)
+	imshow("thresholded",thresh)
 
 
 	# Detect Edges
@@ -97,6 +98,7 @@ def FindBlueObject(frame,hsv):
 	
 		# Draw the line
 		A = cv2.line(frame,(int(point1_obj1[0]),int(point1_obj1[1])),(int(point2_obj1[0]),int(point2_obj1[1])),(255,255,0),2)
+		
 		return listed
 	except:
 		print("Object is not detected")
