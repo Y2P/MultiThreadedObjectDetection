@@ -81,8 +81,8 @@ while True:
 		break
 
 
-	if(isinstance(ST.BlueList, list)):
-		print(ST.BlueList[0])
+	if(isinstance(ST.RedList, np.ndarray)):
+		print(ST.RedList[0])
 
 ## Distance to line from the barge point
 	try:
