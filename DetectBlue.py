@@ -19,7 +19,7 @@ ST.SetTrackBarsBlue()
 distance2Line = 0
 lastdistance = 0
 #Main Loop
-def FindBlueObject(frame,hsv):
+def FindBlueObject(frame,hsv,listed):
 
 	## Get Threshold Parameters
 	## TODO: Get these parameters from calibration

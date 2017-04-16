@@ -19,7 +19,7 @@ ST.SetTrackBarsRed()
 distance2Line = 0
 lastdistance = 0
 #Main Loop
-def FindRedObject(frame,hsv):
+def FindRedObject(frame,hsv,point1):
 
 	## Get Threshold Parameters
 	## TODO: Get these parameters from calibration
@@ -107,9 +107,8 @@ def FindRedObject(frame,hsv):
 	
 		# Draw the line
 		A = cv2.line(frame,(int(point1_obj1[0]),int(point1_obj1[1])),(int(point2_obj1[0]),int(point2_obj1[1])),(255,255,0),2)
-		return point1
 	except:
 		print("Object is not detected")
-		return 0
+		point1 = 0;
 
 	#end = time.time()

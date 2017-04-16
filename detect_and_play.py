@@ -13,6 +13,7 @@ import DetectRed as DR
 
 import threading
 
+import OzHasekiSerial as Ser
 ## Multithread camera is finished here.
 
 
@@ -54,9 +55,17 @@ while True:
 	hsvr = deepcopy(hsv)
 	hsvb = deepcopy(hsv)
 
-	BlueList = DB.FindBlueObject(frameb,hsvb);
-	RedList = DR.FindRedObject(framer,hsvr);
+	BlueList = 0;
+	RedList = 0;
 
+	Bthread = threading.Thread(target=DB.FindBlueObject,args=(frameb,hsvb,BlueList))
+	Rthread = threading.Thread(target=DR.FindRedObject,args=(framer,hsvr,RedList))
+
+	Bthread.start()
+	Rthread.start()
+
+	Bthread.join()
+	Rthread.join()
 
 	print("Blue List: ",BlueList)
 	print("Red List: ",RedList)
@@ -76,16 +85,17 @@ while True:
 
 ## Distance to line from the barge point
 	try:
-		distance2Line = -cv2.pointPolygonTest(listed2[0],(point1[0],point1[1]),True)
+		distance2Line = -cv2.pointPolygonTest(BlueList[0],(RedList[0],RedList[1]),True)
+		print("Distance...." , (distance2Line+lastdistance)/2)
+		lastdistance = distance2Line;
+
 		pass
 		#distance2Line = #norm(np.cross(point1_obj2-point1,point2_obj2-point1))/norm(point2_obj2-point1_obj2)    
 	except:
 		print("Neden?")
 		pass
-	#print("Distance...." , (distance2Line+lastdistance)/2)
-
+	
 	end = time.time()
-	#lastdistance = distance2Line;
 
 	
 	print("Execution Time",(end-start))
