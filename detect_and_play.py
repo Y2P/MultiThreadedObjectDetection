@@ -65,8 +65,8 @@ while True:
 	Bthread.join()
 	Rthread.join()
 
-	print("Blue List: ",ST.BlueList)
-	print("Red List: ",ST.RedList)
+	#print("Blue List: ",ST.BlueList)
+	#print("Red List: ",ST.RedList)
 
 ##### Threads are joined here. 
 
@@ -83,7 +83,7 @@ while True:
 
 ## Distance to line from the barge point
 	try:
-		distance2Line = -cv2.pointPolygonTest(BlueList[0],(RedList[0],RedList[1]),True)
+		#distance2Line = -cv2.pointPolygonTest(BlueList[0],(RedList[0],RedList[1]),True)
 		print("Distance...." , (distance2Line+lastdistance)/2)
 		lastdistance = distance2Line;
 
