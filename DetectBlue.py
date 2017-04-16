@@ -58,7 +58,6 @@ def FindBlueObject(frame,hsv):
 	# Detect Edges
 	edges = cv2.Canny(thresh,50,200)
 	contours,hierarchy = cv2.findContours(edges,cv2.RETR_LIST,cv2.CHAIN_APPROX_SIMPLE)
-
 	# Object Calculations starts here
 	try:
 		temp=frame.copy()
@@ -98,9 +97,9 @@ def FindBlueObject(frame,hsv):
 	
 		# Draw the line
 		A = cv2.line(frame,(int(point1_obj1[0]),int(point1_obj1[1])),(int(point2_obj1[0]),int(point2_obj1[1])),(255,255,0),2)
-
+		return listed
 	except:
 		print("Object is not detected")
-
-	return listed
+		return 0;
+	#return listed
 	#end = time.time()
