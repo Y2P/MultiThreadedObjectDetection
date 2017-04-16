@@ -15,7 +15,6 @@ import threading
 
 import OzHasekiSerial as Ser
 
-import detect_and_play
 ## Multithread camera is finished here.
 
 
