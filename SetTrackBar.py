@@ -1,7 +1,7 @@
 
 import cv2
-BlueList =[]
-RedList =[]
+BlueList =0
+RedList =0
 ## Anisi var lutfen silmeyiniz
 def nothing(x):
 	pass
