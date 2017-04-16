@@ -7,7 +7,7 @@ import pylab
 from numpy import linalg
 from numpy.linalg import norm
 import SetTrackBar as ST
- 
+import DetectBlue as DB
 ## Multithread camera is finished here.
 
 
@@ -44,7 +44,7 @@ while True:
 	frame = cv2.copyMakeBorder(frame,zero_num,zero_num,zero_num,zero_num,cv2.BORDER_CONSTANT,value=[0,0,0])
 	hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV) #BGR to HSV conversion
 
-	BlueList = DetectBlue(frame,hsv);
+	BlueList = DB.FindBlueObject(frame,hsv);
 	print(BlueList)
 	#DetectRed();
 ##### Threads are joined here. 
