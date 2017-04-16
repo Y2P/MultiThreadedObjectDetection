@@ -65,9 +65,6 @@ while True:
 	Bthread.join()
 	Rthread.join()
 
-	print("Blue List: ",type(ST.BlueList))
-	print("Red List: ",type(ST.RedList))
-
 ##### Threads are joined here. 
 
 ##### TODO: Threads will be created. 
@@ -83,7 +80,7 @@ while True:
 
 	if(isinstance(ST.RedList, np.ndarray) and isinstance(ST.BlueList, list)):
 		distance2Line = -cv2.pointPolygonTest(ST.BlueList[0],(ST.RedList[0],ST.RedList[1]),True)
-		print(distance2Line)
+
 
 ## Distance to line from the barge point
 	try:
@@ -91,17 +88,15 @@ while True:
 		distance2Line = -cv2.pointPolygonTest(ST.BlueList[0],(ST.RedList[0],ST.RedList[1]),True)
 		print("Distance...." , (distance2Line+lastdistance)/2)
 		lastdistance = distance2Line;
-
 		pass
 		#distance2Line = #norm(np.cross(point1_obj2-point1,point2_obj2-point1))/norm(point2_obj2-point1_obj2)    
 	except:
-		print("Neden?")
 		pass
 	
 	end = time.time()
 
 	
-	print("Execution Time",(end-start))
+	#print("Execution Time",(end-start))
 
 	
 
