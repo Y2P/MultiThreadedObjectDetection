@@ -11,7 +11,6 @@ cv2.namedWindow("Original Image")
 cv2.namedWindow('controller')
 cv2.namedWindow('controller-2')
 cv2.namedWindow('thresholded')
-cv2.namedWindow('thresholded-2')
 cv2.namedWindow("temp")
 ST.SetTrackBarsBlue()
 
@@ -51,7 +50,7 @@ def FindBlueObject(frame,hsv):
 	# Morphological Operations
 	thresh=cv2.erode(thresh,kernel,iterations=2)
 	thresh=cv2.dilate(thresh,kernel2,iterations=2)
-	cv2.imshow("thresholded",thresh)
+	cv2.imshow('thresholded',thresh)
 
 
 	# Detect Edges
