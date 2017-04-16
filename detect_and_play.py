@@ -9,6 +9,7 @@ from numpy import linalg
 from numpy.linalg import norm
 import SetTrackBar as ST
 import DetectBlue as DB
+import DetectRed as DR
 
 import threading
 
@@ -54,9 +55,9 @@ while True:
 	hsvb = deepcopy(hsv)
 
 	BlueList = DB.FindBlueObject(frameb,hsvb);
-	RedList = DB.FindRedObject(framer,hsvr);
+	RedList = DR.FindRedObject(framer,hsvr);
 
-	
+
 	print("Blue List: ",BlueList)
 	print("Red List: ",RedList)
 
