@@ -1,4 +1,5 @@
 import ThreadedWebcam as CamLib
+from copy import deepcopy
 
 import cv2
 import numpy as np
@@ -8,6 +9,9 @@ from numpy import linalg
 from numpy.linalg import norm
 import SetTrackBar as ST
 import DetectBlue as DB
+
+import threading
+
 ## Multithread camera is finished here.
 
 
@@ -44,9 +48,18 @@ while True:
 	frame = cv2.copyMakeBorder(frame,zero_num,zero_num,zero_num,zero_num,cv2.BORDER_CONSTANT,value=[0,0,0])
 	hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV) #BGR to HSV conversion
 
-	BlueList = DB.FindBlueObject(frame,hsv);
+	frameb = deepcopy(frame)
+	framer = deepcopy(frame)
+	hsvr = deepcopy(hsv)
+	hsvb = deepcopy(hsv)
+
+	BlueList = DB.FindBlueObject(frameb,hsvb);
+	RedList = DB.FindRedObject(framer,hsvr);
+
+	
 	print("Blue List: ",BlueList)
-	#DetectRed();
+	print("Red List: ",RedList)
+
 ##### Threads are joined here. 
 
 ##### TODO: Threads will be created. 

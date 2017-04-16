@@ -30,14 +30,19 @@ def FindRedObject(frame,hsv):
 	sh= cv2.getTrackbarPos('Shigh','controller')
 	vh= cv2.getTrackbarPos('Vhigh','controller')
 
-	## Get Morphological Operation Kernel Size
+
+## Get Morphological Operation Kernel Size
 	ker_size=cv2.getTrackbarPos('Kernel Size','controller')
+	ker_size2=cv2.getTrackbarPos('Kernel2 Size','controller')
 
 
 	# Create the kernel 
 	h=np.kaiser(ker_size,1)
 	kernel=np.sqrt(np.outer(h,h))
 
+	# Create the kernel 2
+	h2=np.kaiser(ker_size2,1)
+	kernel2=np.sqrt(np.outer(h2,h2))
 
 	# Create the low and high boundaries
 	low=np.array([hl,sl,vl], dtype=np.uint8) #Lower limits
@@ -102,9 +107,9 @@ def FindRedObject(frame,hsv):
 	
 		# Draw the line
 		A = cv2.line(frame,(int(point1_obj1[0]),int(point1_obj1[1])),(int(point2_obj1[0]),int(point2_obj1[1])),(255,255,0),2)
-
+		return point1
 	except:
 		print("Object is not detected")
+		return 0
 
-	return point1
 	#end = time.time()
