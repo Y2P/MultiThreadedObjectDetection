@@ -6,7 +6,7 @@ import pylab
 from numpy import linalg
 from numpy.linalg import norm
 import SetTrackBar as ST
-import detect_and_playas as dp
+import detect_and_play as dp
 #Windows
 cv2.namedWindow("Original Image")
 cv2.namedWindow('controller')
@@ -20,6 +20,7 @@ distance2Line = 0
 lastdistance = 0
 #Main Loop
 def FindRedObject(frame,hsv):
+	global dp.RedList
 	## Get Threshold Parameters
 	## TODO: Get these parameters from calibration
 	hl= cv2.getTrackbarPos('Hlow','controller')
