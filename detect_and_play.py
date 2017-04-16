@@ -44,7 +44,8 @@ while True:
 	frame = cv2.copyMakeBorder(frame,zero_num,zero_num,zero_num,zero_num,cv2.BORDER_CONSTANT,value=[0,0,0])
 	hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV) #BGR to HSV conversion
 
-	#DetectBlue();
+	BlueList = DetectBlue(frame,hsv);
+	print(BlueList)
 	#DetectRed();
 ##### Threads are joined here. 
 
@@ -65,13 +66,12 @@ while True:
 		pass
 		#distance2Line = #norm(np.cross(point1_obj2-point1,point2_obj2-point1))/norm(point2_obj2-point1_obj2)    
 	except:
-		
-	#print("Neden?")
+		print("Neden?")
 		pass
-	print("Distance...." , (distance2Line+lastdistance)/2)
+	#print("Distance...." , (distance2Line+lastdistance)/2)
 
 	end = time.time()
-	lastdistance = distance2Line;
+	#lastdistance = distance2Line;
 
 	
 	print("Execution Time",(end-start))
