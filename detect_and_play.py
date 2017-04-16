@@ -65,8 +65,8 @@ while True:
 	Bthread.join()
 	Rthread.join()
 
-	print("Blue List: ",ST.BlueList)
-	print("Red List: ",ST.RedList)
+	print("Blue List: ",type(ST.BlueList))
+	print("Red List: ",type(ST.RedList))
 
 ##### Threads are joined here. 
 
