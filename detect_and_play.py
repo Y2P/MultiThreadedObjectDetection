@@ -82,7 +82,6 @@ while True:
 
 
 	if(isinstance(ST.RedList, np.ndarray) and isinstance(ST.BlueList, list)):
-		print(ST.RedList[1])
 		distance2Line = -cv2.pointPolygonTest(ST.BlueList[0],(ST.RedList[0],ST.RedList[1]),True)
 		print(distance2Line)
 
