@@ -32,12 +32,16 @@ def FindBlueObject(frame,hsv):
 
 	## Get Morphological Operation Kernel Size
 	ker_size=cv2.getTrackbarPos('Kernel Size','controller')
+	ker_size2=cv2.getTrackbarPos('Kernel2 Size','controller')
 
 
 	# Create the kernel 
 	h=np.kaiser(ker_size,1)
 	kernel=np.sqrt(np.outer(h,h))
 
+	# Create the kernel 2
+	h2=np.kaiser(ker_size2,1)
+	kernel2=np.sqrt(np.outer(h2,h2))
 
 	# Create the low and high boundaries
 	low=np.array([hl,sl,vl], dtype=np.uint8) #Lower limits
