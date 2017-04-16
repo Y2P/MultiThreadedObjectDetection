@@ -6,7 +6,7 @@ import pylab
 from numpy import linalg
 from numpy.linalg import norm
 import SetTrackBar as ST
-import detect_and_play as dp
+
 #Windows
 cv2.namedWindow("Original Image")
 cv2.namedWindow('controller')
@@ -16,6 +16,7 @@ cv2.namedWindow('thresholded-2')
 cv2.namedWindow("temp")
 ST.SetTrackBarsBlue()
 
+BlueList = []
 distance2Line = 0
 lastdistance = 0
 #Main Loop
@@ -97,9 +98,9 @@ def FindBlueObject(frame,hsv):
 	
 		# Draw the line
 		A = cv2.line(frame,(int(point1_obj1[0]),int(point1_obj1[1])),(int(point2_obj1[0]),int(point2_obj1[1])),(255,255,0),2)
-		dp.BlueList = listed
+		BlueList = listed
 	except:
 		print("Object is not detected")
-		dp.BlueList = 0
+		BlueList = 0
 	#return listed
 	#end = time.time()

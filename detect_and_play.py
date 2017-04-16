@@ -40,8 +40,7 @@ vc = CamLib.WebcamVideoStream(src = 0).start()#cv2.VideoCapture(0)
 distance2Line = 0
 lastdistance = 0
 zero_num=15 #zeros to be padded
-BlueList =[]
-RedList =[]
+
 #Main Loop
 while True:
 
@@ -66,8 +65,8 @@ while True:
 	Bthread.join()
 	Rthread.join()
 
-	print("Blue List: ",BlueList)
-	print("Red List: ",RedList)
+	print("Blue List: ",DB.BlueList)
+	print("Red List: ",DR.RedList)
 
 ##### Threads are joined here. 
 
