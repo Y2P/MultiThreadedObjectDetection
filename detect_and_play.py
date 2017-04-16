@@ -43,7 +43,7 @@ while True:
 
 	frame = cv2.copyMakeBorder(frame,zero_num,zero_num,zero_num,zero_num,cv2.BORDER_CONSTANT,value=[0,0,0])
 	hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV) #BGR to HSV conversion
-	
+	imshow(frame,"Original Image")
 	#DetectBlue();
 	#DetectRed();
 ##### Threads are joined here. 
