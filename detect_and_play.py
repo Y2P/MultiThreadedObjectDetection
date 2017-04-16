@@ -82,12 +82,12 @@ while True:
 
 
 	if(isinstance(ST.RedList, np.ndarray)):
-		print(ST.RedList[0])
+		print(ST.RedList[1])
 
 ## Distance to line from the barge point
 	try:
 
-		distance2Line = -cv2.pointPolygonTest(ST.BlueList[0],(ST.RedList.item(0),ST.RedList.item(1)),True)
+		distance2Line = -cv2.pointPolygonTest(ST.BlueList[0],(ST.RedList[0],ST.RedList[1]),True)
 		print("Distance...." , (distance2Line+lastdistance)/2)
 		lastdistance = distance2Line;
 
