@@ -39,7 +39,8 @@ vc = CamLib.WebcamVideoStream(src = 0).start()#cv2.VideoCapture(0)
 distance2Line = 0
 lastdistance = 0
 zero_num=15 #zeros to be padded
-
+BlueList =[]
+RedList =[]
 #Main Loop
 while True:
 
