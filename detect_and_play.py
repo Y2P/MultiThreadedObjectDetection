@@ -57,8 +57,8 @@ while True:
 	hsvr = deepcopy(hsv)
 	hsvb = deepcopy(hsv)
 
-	Bthread = threading.Thread(target=DB.FindBlueObject,args=(frameb,hsvb,BlueList))
-	Rthread = threading.Thread(target=DR.FindRedObject,args=(framer,hsvr,RedList))
+	Bthread = threading.Thread(target=DB.FindBlueObject,args=(frameb,hsvb))
+	Rthread = threading.Thread(target=DR.FindRedObject,args=(framer,hsvr))
 	#DR.FindRedObject(framer,hsvr)
 	Bthread.start()
 	Rthread.start()
