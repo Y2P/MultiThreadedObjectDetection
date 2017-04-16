@@ -1,5 +1,7 @@
 
 import cv2
+BlueList =[]
+RedList =[]
 ## Anisi var lutfen silmeyiniz
 def nothing(x):
 	pass
