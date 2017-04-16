@@ -81,14 +81,13 @@ while True:
 		break
 
 
-	try:
-		print(BlueList[0],RedList.item(0),RedList.item(1))
-	except:
-		print("Yoh Yoh")
+	if(isinstance([], list))
+		print(ST.BlueList[0])
+
 ## Distance to line from the barge point
 	try:
 
-		distance2Line = -cv2.pointPolygonTest(BlueList[0],(RedList.item(0),RedList.item(1)),True)
+		distance2Line = -cv2.pointPolygonTest(ST.BlueList[0],(ST.RedList.item(0),ST.RedList.item(1)),True)
 		print("Distance...." , (distance2Line+lastdistance)/2)
 		lastdistance = distance2Line;
 
