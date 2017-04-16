@@ -20,7 +20,6 @@ distance2Line = 0
 lastdistance = 0
 #Main Loop
 def FindRedObject(frame,hsv):
-	global dp.RedList
 	## Get Threshold Parameters
 	## TODO: Get these parameters from calibration
 	hl= cv2.getTrackbarPos('Hlow','controller')
