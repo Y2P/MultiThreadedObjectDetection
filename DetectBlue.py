@@ -53,7 +53,7 @@ def FindBlueObject(frame,hsv):
 	# Morphological Operations
 	thresh=cv2.erode(thresh,kernel,iterations=2)
 	thresh=cv2.dilate(thresh,kernel2,iterations=2)
-	imshow("thresholded",thresh)
+	cv2.imshow("thresholded",thresh)
 
 
 	# Detect Edges
