@@ -45,7 +45,7 @@ while True:
 	hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV) #BGR to HSV conversion
 
 	BlueList = DB.FindBlueObject(frame,hsv);
-	print(BlueList)
+	print("Blue List: ",BlueList)
 	#DetectRed();
 ##### Threads are joined here. 
 
