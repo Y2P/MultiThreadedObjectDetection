@@ -100,3 +100,4 @@ def FindBlueObject(frame,hsv):
 
 	return listed
 	#end = time.time()
+FindBlueObject(0,0)
