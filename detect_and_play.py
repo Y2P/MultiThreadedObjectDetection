@@ -40,7 +40,7 @@ while True:
 	start = time.time()
 	frame = vc.read()
 	frame=cv2.resize(frame,(320,240)) #Reduce the resolution
-	cv2.imshow(frame,"Original Image")
+	cv2.imshow("Original Image",frame)
 	frame = cv2.copyMakeBorder(frame,zero_num,zero_num,zero_num,zero_num,cv2.BORDER_CONSTANT,value=[0,0,0])
 	hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV) #BGR to HSV conversion
 
