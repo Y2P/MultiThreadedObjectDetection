@@ -20,7 +20,6 @@ distance2Line = 0
 lastdistance = 0
 #Main Loop
 def FindBlueObject(frame,hsv):
-	global dp.BlueList
 	## Get Threshold Parameters
 	## TODO: Get these parameters from calibration
 	hl= cv2.getTrackbarPos('Hlow','controller-2')
