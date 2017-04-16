@@ -83,7 +83,7 @@ while True:
 
 	try:
 		print(BlueList[0],RedList[0],RedList[1])
-	except 
+	except:
 		print("Yoh Yoh")
 ## Distance to line from the barge point
 	try:
