@@ -60,10 +60,10 @@ while True:
 	#Rthread = threading.Thread(target=DR.FindRedObject,args=(framer,hsvr,RedList))
 	DR.FindRedObject(framer,hsvr,RedList)
 	#Bthread.start()
-	Rthread.start()
+	#Rthread.start()
 
 	#Bthread.join()
-	Rthread.join()
+	#Rthread.join()
 
 	print("Blue List: ",BlueList)
 	print("Red List: ",RedList)
