@@ -100,11 +100,11 @@ while True:
 		pass
 	
 	Txt.insert(END,str(distance2Line))
-	textboxthread.start()
+	#textboxthread.start()
 	end = time.time()
 
 	
-	#print("Execution Time",(end-start))
+	print("Execution Time",(end-start))
 
 	
 
