@@ -98,7 +98,7 @@ while True:
 		pass
 	
 	Txt.insert(END,str(distance2Line))
-
+	DistanceTxt.mainloop()
 	end = time.time()
 
 	
