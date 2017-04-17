@@ -1,6 +1,6 @@
 import ThreadedWebcam as CamLib
 from copy import deepcopy
-
+from Tkinter import * 
 import cv2
 import numpy as np
 import time
@@ -15,8 +15,12 @@ import threading
 
 import OzHasekiSerial as Ser
 
+# Distance text gui
+DistanceTxt = Tk()
+Label(DistanceTxt, text= "Distance Value:" ).pack()
+Txt = Text(Tk,height=2,weight=2)
+Txt.pack()
 ## Multithread camera is finished here.
-
 
 iLastX=-1
 iLastY=-1
@@ -88,6 +92,7 @@ while True:
 		distance2Line = -cv2.pointPolygonTest(ST.BlueList[0],(ST.RedList[0],ST.RedList[1]),True)
 		print("Distance...." , (distance2Line+lastdistance)/2)
 		lastdistance = distance2Line;
+		Txt.insert(END,str(distance2Line))
 		pass
 		#distance2Line = #norm(np.cross(point1_obj2-point1,point2_obj2-point1))/norm(point2_obj2-point1_obj2)    
 	except:
