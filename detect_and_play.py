@@ -44,6 +44,7 @@ vc = CamLib.WebcamVideoStream(src = 0).start()#cv2.VideoCapture(0)
 distance2Line = 0
 lastdistance = 0
 zero_num=15 #zeros to be padded
+textboxthread = threading.Thread(target=DistanceTxt.mainloop())
 
 #Main Loop
 while True:
@@ -62,6 +63,7 @@ while True:
 
 	Bthread = threading.Thread(target=DB.FindBlueObject,args=(frameb,hsvb))
 	Rthread = threading.Thread(target=DR.FindRedObject,args=(framer,hsvr))
+
 	#DR.FindRedObject(framer,hsvr)
 	Bthread.start()
 	Rthread.start()
@@ -98,7 +100,7 @@ while True:
 		pass
 	
 	Txt.insert(END,str(distance2Line))
-	DistanceTxt.mainloop()
+	textboxthread.start()
 	end = time.time()
 
 	
