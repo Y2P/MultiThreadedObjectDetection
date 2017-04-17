@@ -18,7 +18,7 @@ import OzHasekiSerial as Ser
 # Distance text gui
 DistanceTxt = Tk()
 Label(DistanceTxt, text= "Distance Value:" ).pack()
-Txt = Text(DistanceTxt,height=2,weight=2)
+Txt = Text(DistanceTxt,height=2,width=2)
 Txt.pack()
 ## Multithread camera is finished here.
 
