@@ -15,11 +15,7 @@ import threading
 
 import OzHasekiSerial as Ser
 
-# Distance text gui
-DistanceTxt = Tk()
-Label(DistanceTxt, text= "Distance Value:" ).pack()
-Txt = Text(DistanceTxt,height=2,width=2)
-Txt.pack()
+
 ## Multithread camera is finished here.
 
 iLastX=-1
@@ -44,7 +40,7 @@ vc = CamLib.WebcamVideoStream(src = 0).start()#cv2.VideoCapture(0)
 distance2Line = 0
 lastdistance = 0
 zero_num=15 #zeros to be padded
-textboxthread = threading.Thread(target=DistanceTxt.mainloop())
+#textboxthread = threading.Thread(target=DistanceTxt.mainloop())
 
 #Main Loop
 while True:
@@ -99,7 +95,7 @@ while True:
 	except:
 		pass
 	
-	Txt.insert(END,str(distance2Line))
+	#Txt.insert(END,str(distance2Line))
 	#textboxthread.start()
 	end = time.time()
 
