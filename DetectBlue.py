@@ -97,7 +97,7 @@ def FindBlueObject(frame,hsv):
 		A = cv2.line(frame,(int(point1_obj1[0]),int(point1_obj1[1])),(int(point2_obj1[0]),int(point2_obj1[1])),(255,255,0),2)
 		ST.BlueList = listed
 	except:
-		print("Object is not detected")
+		print("Object Blue is not detected")
 		ST.BlueList = 0
 	#return listed
 	#end = time.time()
