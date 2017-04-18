@@ -18,4 +18,4 @@ def ComLoop(SentMessage1,SentMessage2):
 		print("Message waiting")
 		mess = ReadSerial()
 		print("Message is read",mess)
-		
+		SendSerial(SentMessage1)
