@@ -13,7 +13,7 @@ def ReadSerial():
     except:
         print('GGWP olduk')
         
-def ComLoop(SentMessage):
+def ComLoop(SentMessage1,SentMessage2):
 	while True:
 		print("Message waiting")
 		mess = ReadSerial()
