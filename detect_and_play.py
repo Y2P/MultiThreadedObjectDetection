@@ -10,7 +10,7 @@ from numpy.linalg import norm
 import SetTrackBar as ST
 import DetectBlue as DB
 import DetectRed as DR
-
+import OzHasekiSerial as Ser
 import threading
 
 import OzHasekiSerial as Ser
@@ -41,6 +41,7 @@ distance2Line = 0
 lastdistance = 0
 zero_num=15 #zeros to be padded
 #textboxthread = threading.Thread(target=DistanceTxt.mainloop())
+SerCom = threading.Thread(target=Ser.ComLoop,args=(framer,hsvr))
 
 #Main Loop
 while True:
