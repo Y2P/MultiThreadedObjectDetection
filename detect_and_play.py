@@ -41,7 +41,7 @@ distance2Line = 0
 lastdistance = 0
 zero_num=15 #zeros to be padded
 #textboxthread = threading.Thread(target=DistanceTxt.mainloop())
-SerCom = threading.Thread(target=Ser.ComLoop,args=distance2Line)
+SerCom = threading.Thread(target=Ser.ComLoop,args=(distance2Line))
 SerCom.start()
 #Main Loop
 while True:
