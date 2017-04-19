@@ -1,4 +1,6 @@
 import serial
+import SetTrackBar as ST
+
 import detect_and_play as dap
 def SendSerial(message):
     try:
@@ -17,5 +19,5 @@ def ReadSerial():
 def ComLoop(SentMessage1,SentMessage2):
 		print("Message waiting")
 		mess = ReadSerial()
-		print("Message is read",dap.distance2Line)
+		print("Message is read",ST.distance2Line)
 		SendSerial(SentMessage1)
