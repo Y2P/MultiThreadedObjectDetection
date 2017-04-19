@@ -17,6 +17,10 @@ ST.SetTrackBarsRed()
 
 distance2Line = 0
 lastdistance = 0
+fourcc = cv2.cv.CV_FOURCC('H','2','6','1')
+out = cv2.VideoWriter()
+success = out.open('output.avi',fourcc,5.0,(352,288),1)   
+
 #Main Loop
 def FindRedObject(disp,frame,hsv):
 	## Get Threshold Parameters
@@ -107,6 +111,7 @@ def FindRedObject(disp,frame,hsv):
 		# Draw the line
 		A = cv2.line(frame,(int(point1_obj1[0]),int(point1_obj1[1])),(int(point2_obj1[0]),int(point2_obj1[1])),(255,255,0),2)
 		cv2.imshow("temp",frame)
+		out.write(frame)
 		print(size(frame))
 	except:
 		print("Object Red is not detected")
