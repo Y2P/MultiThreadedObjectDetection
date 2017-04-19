@@ -1,7 +1,6 @@
 import serial
 import SetTrackBar as ST
 
-import detect_and_play as dap
 def SendSerial(message):
     try:
         ser = serial.Serial('/dev/ttyUSB0',9600)
