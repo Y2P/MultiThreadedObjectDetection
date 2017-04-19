@@ -1,4 +1,5 @@
 import serial
+import detect_and_play as dap
 def SendSerial(message):
     try:
         ser = serial.Serial('/dev/ttyUSB0',9600)
@@ -14,8 +15,7 @@ def ReadSerial():
         print('GGWP olduk')
         
 def ComLoop(SentMessage1,SentMessage2):
-	while True:
 		print("Message waiting")
 		mess = ReadSerial()
-		print("Message is read",mess)
+		print("Message is read",dap.distance2Line)
 		SendSerial(SentMessage1)

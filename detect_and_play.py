@@ -42,7 +42,7 @@ lastdistance = 0
 zero_num=15 #zeros to be padded
 #textboxthread = threading.Thread(target=DistanceTxt.mainloop())
 SerCom = threading.Thread(target=Ser.ComLoop,args=(distance2Line,lastdistance))
-SerCom.start()
+
 #Main Loop
 while True:
 
@@ -58,8 +58,8 @@ while True:
 	hsvr = deepcopy(hsv)
 	hsvb = deepcopy(hsv)
 
-	Bthread = threading.Thread(target=DB.FindBlueObject,args=(frameb,hsvb))
-	Rthread = threading.Thread(target=DR.FindRedObject,args=(framer,hsvr))
+	Bthread = threading.Thread(target=DB.FindBlueObject,args=(frame,frameb,hsvb))
+	Rthread = threading.Thread(target=DR.FindRedObject,args=(frame,framer,hsvr))
 
 	#DR.FindRedObject(framer,hsvr)
 	Bthread.start()
@@ -67,6 +67,7 @@ while True:
 
 	Bthread.join()
 	Rthread.join()
+	SerCom.start()
 
 ##### Threads are joined here. 
 
