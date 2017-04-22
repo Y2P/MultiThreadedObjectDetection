@@ -14,7 +14,7 @@ import OzHasekiSerial as Ser
 import threading
 
 import OzHasekiSerial as Ser
-
+import showResults as  SR
 
 ## Multithread camera is finished here.
 
@@ -48,19 +48,19 @@ SerCom.start()
 while True:
 
 	start = time.time()
-	frame = vc.read()
-	frame=cv2.resize(frame,(322,258)) #Reduce the resolution
-	cv2.imshow("Original Image",frame)
-	frame = cv2.copyMakeBorder(frame,zero_num,zero_num,zero_num,zero_num,cv2.BORDER_CONSTANT,value=[0,0,0])
-	hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV) #BGR to HSV conversion
+	SR.frame = vc.read()
+	SR.frame=cv2.resize(SR.frame,(322,258)) #Reduce the resolution
+	cv2.imshow("Original Image",SR.frame)
+	SR.frame = cv2.copyMakeBorder(SR.frame,zero_num,zero_num,zero_num,zero_num,cv2.BORDER_CONSTANT,value=[0,0,0])
+	hsv = cv2.cvtColor(SR.frame, cv2.COLOR_BGR2HSV) #BGR to HSV conversion
 
-	frameb = deepcopy(frame)
-	framer = deepcopy(frame)
+	frameb = deepcopy(SR.frame)
+	framer = deepcopy(SR.frame)
 	hsvr = deepcopy(hsv)
 	hsvb = deepcopy(hsv)
 
-	Bthread = threading.Thread(target=DB.FindBlueObject,args=(frame,frameb,hsvb))
-	Rthread = threading.Thread(target=DR.FindRedObject,args=(frame,framer,hsvr))
+	Bthread = threading.Thread(target=DB.FindBlueObject,args=(frameb,hsvb))
+	Rthread = threading.Thread(target=DR.FindRedObject,args=(framer,hsvr))
 
 	#DR.FindRedObject(framer,hsvr)
 	Bthread.start()
@@ -69,6 +69,9 @@ while True:
 	Bthread.join()
 	Rthread.join()
 
+	showResultsThread = threading.Thread(target=SR.showResults,args=SR.frame)
+	showResultsThread.start()
+	showResultsThread.join()
 ##### Threads are joined here. 
 
 ##### TODO: Threads will be created. 

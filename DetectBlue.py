@@ -17,7 +17,7 @@ ST.SetTrackBarsBlue()
 distance2Line = 0
 lastdistance = 0
 #Main Loop
-def FindBlueObject(disp,frame,hsv):
+def FindBlueObject(frame,hsv):
 	## Get Threshold Parameters
 	## TODO: Get these parameters from calibration
 	hl= cv2.getTrackbarPos('Hlow','controller-2')
@@ -94,7 +94,7 @@ def FindBlueObject(disp,frame,hsv):
 		point2_obj1 = ellipse[0] - offset
 	
 		# Draw the line
-		A = cv2.line(disp,(int(point1_obj1[0]),int(point1_obj1[1])),(int(point2_obj1[0]),int(point2_obj1[1])),(255,255,0),2)
+		A = cv2.line(SR.frame,(int(point1_obj1[0]),int(point1_obj1[1])),(int(point2_obj1[0]),int(point2_obj1[1])),(255,255,0),2)
 		#cv2.imshow("temp",disp)
 
 		ST.BlueList = listed
