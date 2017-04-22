@@ -102,7 +102,7 @@ while True:
 	end = time.time()
 
 	
-	print("Execution Time",(end-start))
+	#print("Execution Time",(end-start))
 
 	
 

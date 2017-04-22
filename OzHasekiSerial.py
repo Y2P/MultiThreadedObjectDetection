@@ -23,7 +23,7 @@ def ComLoop(SentMessage1,SentMessage2):
 		ser = serial.Serial('/dev/ttyACM0',9600)
 		
 		lock.acquire()
-		print("Message waiting")
+		#print("Message waiting")
 		mess = ser.readline()
 		print("Message is read",mess)
 		lock.release()
