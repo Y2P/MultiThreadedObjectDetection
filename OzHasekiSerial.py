@@ -1,6 +1,6 @@
 import serial
 import SetTrackBar as ST
-
+lock = threading.Lock()
 def SendSerial(message):
 	try:
 		ser = serial.Serial('/dev/ttyUSB0',9600)
@@ -16,9 +16,14 @@ def ReadSerial():
 		print('GGWP olduk')
 		
 def ComLoop(SentMessage1,SentMessage2):
+
 	while True:
 		ser = serial.Serial('/dev/ttyACM0',9600)
+		
+		lock.acquire()
 		print("Message waiting")
 		mess = ser.readline()
 		print("Message is read",mess)
+		lock.release()
+
 		ser.write(str(ST.distance2Line))
