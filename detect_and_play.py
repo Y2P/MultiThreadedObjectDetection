@@ -69,7 +69,7 @@ while True:
 	Bthread.join()
 	Rthread.join()
 
-	showResultsThread = threading.Thread(target=SR.showRes,args=(SR.frame))
+	showResultsThread = threading.Thread(target=SR.showRes,args=(SR.frame,3))
 	showResultsThread.start()
 	showResultsThread.join()
 ##### Threads are joined here. 
