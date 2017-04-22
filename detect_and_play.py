@@ -42,7 +42,6 @@ lastdistance = 0
 zero_num=15 #zeros to be padded
 #textboxthread = threading.Thread(target=DistanceTxt.mainloop())
 SerCom = threading.Thread(target=Ser.ComLoop,args=(distance2Line,lastdistance))
-SerCom.start()
 
 #Main Loop
 while True:
@@ -68,6 +67,7 @@ while True:
 
 	Bthread.join()
 	Rthread.join()
+	SerCom.start()
 
 ##### Threads are joined here. 
 
