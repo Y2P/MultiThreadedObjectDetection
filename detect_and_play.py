@@ -80,7 +80,7 @@ while True:
 
 ## New Frame is taken after all operations
 ## Is ESC pressed ( Exit Request)
-	k = cv2.waitKey(60) & 0xff
+	key = cv2.waitKey(60) & 0xff
 	if key == 27: # exit on ESC
 		break
 
