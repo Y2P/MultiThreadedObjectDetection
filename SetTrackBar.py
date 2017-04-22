@@ -17,7 +17,7 @@ def SetTrackBarsRed():
 	cv2.createTrackbar('Vlow','controller',0,255,nothing)
 	cv2.createTrackbar('Vhigh','controller',0,255,nothing)
 
-	cv2.setTrackbarPos('Hhigh','controller',91)
+	cv2.setTrackbarPos('Hhigh','controller',15)
 	cv2.setTrackbarPos('Shigh','controller',255)
 	cv2.setTrackbarPos('Vhigh','controller',255)
 	cv2.setTrackbarPos('Hlow','controller',0)
