@@ -17,7 +17,8 @@ def ReadSerial():
         
 def ComLoop(SentMessage1,SentMessage2):
     ser = serial.Serial('/dev/ttyACM0',9600)
-    print("Message waiting")
-    mess = ser.readline()
-    print("Message is read",mess)
-    #ser.write(str(ST.distance2Line))
+    while true:
+        print("Message waiting")
+        mess = ser.readline()
+        print("Message is read",mess)
+        ser.write(str(ST.distance2Line))
