@@ -21,12 +21,14 @@ def ComLoop(SentMessage1,SentMessage2):
 
 	while True:
 		ser = serial.Serial('/dev/ttyACM0',9600)
-		
+		## Is ESC pressed ( Exit Request)
+		key = cv2.waitKey(20)
+		if key == 27: # exit on ESC
+			break
 		lock.acquire()
 		#print("Message waiting")
 		mess = ser.readline()
 		print("Message is read",mess)
-		print(str(ST.distance2Line))
 		ser.write(str(ST.distance2Line))
 		lock.release()
 
