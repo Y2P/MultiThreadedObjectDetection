@@ -3,6 +3,7 @@ import cv2
 BlueList =0
 RedList =0
 distance2Line = 0
+differenceLine = 0
 ## Anisi var lutfen silmeyiniz
 def nothing(x):
 	pass

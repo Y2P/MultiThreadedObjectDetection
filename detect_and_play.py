@@ -94,7 +94,9 @@ while True:
 
 		ST.distance2Line = -cv2.pointPolygonTest(ST.BlueList[0],(ST.RedList[0],ST.RedList[1]),True)
 		print("Distance...." , (ST.distance2Line+lastdistance)/2)
+		ST.differenceLine = np.abs(ST.distance2Line-lastdistance)
 		lastdistance = ST.distance2Line;
+
 		pass
 		#distance2Line = #norm(np.cross(point1_obj2-point1,point2_obj2-point1))/norm(point2_obj2-point1_obj2)    
 	except:
