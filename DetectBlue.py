@@ -95,7 +95,7 @@ def FindBlueObject(frame,hsv):
 		point2_obj1 = ellipse[0] - offset
 	
 		# Draw the line
-		A = cv2.line(SR.frame,(int(point1_obj1[0]),int(point1_obj1[1])),(int(point2_obj1[0]),int(point2_obj1[1])),(255,255,0),2)
+		A = cv2.line(SR.frame,(int(point1_obj1[0]),int(point1_obj1[1])),(int(point2_obj1[0]),int(point2_obj1[1])),(0,255,255),2)
 		#cv2.imshow("temp",disp)
 
 		ST.BlueList = listed
