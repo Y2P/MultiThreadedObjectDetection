@@ -6,7 +6,7 @@ import pylab
 from numpy import linalg
 from numpy.linalg import norm
 import SetTrackBar as ST
-
+import showResults as SR
 #Windows
 cv2.namedWindow("Original Image")
 cv2.namedWindow('controller')
@@ -22,7 +22,7 @@ out = cv2.VideoWriter()
 success = out.open('output.avi',fourcc,5.0,(352,288),1)   
 
 #Main Loop
-def FindRedObject(disp,frame,hsv):
+def FindRedObject(frame,hsv):
 	## Get Threshold Parameters
 	## TODO: Get these parameters from calibration
 	hl= cv2.getTrackbarPos('Hlow','controller')
@@ -109,8 +109,8 @@ def FindRedObject(disp,frame,hsv):
 		cv2.circle(frame,(int(point1[0]),int(point1[1])),10,(0,0,0))
 		ST.RedList = point1
 		# Draw the line
-		A = cv2.line(frame,(int(point1_obj1[0]),int(point1_obj1[1])),(int(point2_obj1[0]),int(point2_obj1[1])),(255,255,0),2)
-		cv2.imshow("temp",frame)
+		A = cv2.line(SR.frame,(int(point1_obj1[0]),int(point1_obj1[1])),(int(point2_obj1[0]),int(point2_obj1[1])),(255,255,0),2)
+		#cv2.imshow("temp",frame)
 		#out.write(frame)
 	except:
 		print("Object Red is not detected")

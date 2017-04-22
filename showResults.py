@@ -10,5 +10,5 @@ cv2.namedWindow('thresholded-2')
 cv2.namedWindow("temp")
 
 frame = 0
-def showResults():
-	cv2.imshow("temp",frame)
+def showResults(updatedframe):
+	cv2.imshow("temp",updatedframe)
