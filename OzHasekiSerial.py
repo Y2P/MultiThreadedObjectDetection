@@ -1,6 +1,7 @@
 import serial
 import SetTrackBar as ST
 import threading
+import cv2
 
 lock = threading.Lock()
 def SendSerial(message):
