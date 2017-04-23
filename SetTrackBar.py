@@ -54,4 +54,4 @@ def SetTrackBarsBlue():
 	cv2.setTrackbarPos('Vhigh','controller-2',255)
 	cv2.setTrackbarPos('Hlow','controller-2',98)
 	cv2.setTrackbarPos('Vlow','controller-2',65)
-	cv2.setTrackbarPos('Slow','controller-2',112)
+	cv2.setTrackbarPos('Slow','controller-2',0)
