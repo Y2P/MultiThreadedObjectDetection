@@ -107,8 +107,8 @@ def FindRedObject(frame,hsv):
 		else: 
 			point1 = point2_obj1
 
-#		print("Point1: ", point1_obj1)
-#		print("Point2: ", point2_obj1)
+		print("Point1: ", point1_obj1)
+		print("Point2: ", point2_obj1)
 
 		#slope = offset[1]/offset[0]
 
