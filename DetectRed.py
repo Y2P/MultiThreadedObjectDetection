@@ -106,7 +106,7 @@ def FindRedObject(frame,hsv):
 			point1=point1_obj1
 		else:
 			point1=point2_obj1
-		cv2.circle(frame,(int(point1[0]),int(point1[1])),10,(0,0,0))
+		cv2.circle(SR.frame,(int(point1[0]),int(point1[1])),10,(0,0,0))
 		ST.RedList = point1
 		# Draw the line
 		A = cv2.line(SR.frame,(int(point1_obj1[0]),int(point1_obj1[1])),(int(point2_obj1[0]),int(point2_obj1[1])),(255,255,0),2)
