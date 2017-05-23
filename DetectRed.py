@@ -102,10 +102,11 @@ def FindRedObject(frame,hsv):
 
 
 		print(point1_obj1[0])
-		if point1_obj1[0] > point2_obj1[0]
-			point1 = point1_obj1
-		else 
-			point1 = point2_obj1
+
+		#if point1_obj1[0] > point2_obj1[0]
+		#	point1 = point1_obj1
+		#else 
+		#	point1 = point2_obj1
 
 #		print("Point1: ", point1_obj1)
 #		print("Point2: ", point2_obj1)
