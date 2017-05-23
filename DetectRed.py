@@ -101,7 +101,7 @@ def FindRedObject(frame,hsv):
 		point2_obj1 = ellipse[0] - offset
 
 		print("Point1: ", point1_obj1)
-		print("Point2: ", point2_obj2)
+		print("Point2: ", point2_obj1)
 
 		slope = offset[1]/offset[0]
 
