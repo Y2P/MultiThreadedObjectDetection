@@ -101,7 +101,6 @@ def FindRedObject(frame,hsv):
 		point2_obj1 = ellipse[0] - offset
 
 
-		print(point1_obj1[0])
 
 		if point1_obj1[0] > point2_obj1[0]:
 			point1 = point1_obj1
