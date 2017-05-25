@@ -102,20 +102,20 @@ def FindRedObject(frame,hsv):
 
 
 
-		if point1_obj1[0] > point2_obj1[0]:
-			point1 = point1_obj1
-		else: 
-			point1 = point2_obj1
+		#if point1_obj1[0] > point2_obj1[0]:
+		#	point1 = point1_obj1
+		#else: 
+		#	point1 = point2_obj1
 
-		print("Point1: ", point1_obj1)
-		print("Point2: ", point2_obj1)
+		#print("Point1: ", point1_obj1)
+		#print("Point2: ", point2_obj1)
 
-		#slope = offset[1]/offset[0]
+		slope = offset[1]/offset[0]
 
-		#if slope>0:
-		#	point1=point1_obj1
-		#else:
-		#	point1=point2_obj1
+		if slope>0:
+			point1=point1_obj1
+		else:
+			point1=point2_obj1
 		
 
 		cv2.circle(SR.frame,(int(point1[0]),int(point1[1])),10,(0,0,0))
