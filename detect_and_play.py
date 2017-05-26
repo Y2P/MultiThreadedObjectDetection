@@ -4,7 +4,7 @@ from Tkinter import *
 import cv2
 import numpy as np
 import time
-import pylab"
+import pylab
 from numpy import linalg
 from numpy.linalg import norm
 import SetTrackBar as ST
