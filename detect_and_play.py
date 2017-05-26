@@ -4,7 +4,7 @@ from Tkinter import *
 import cv2
 import numpy as np
 import time
-import pylab
+import pylab"
 from numpy import linalg
 from numpy.linalg import norm
 import SetTrackBar as ST
@@ -91,11 +91,14 @@ while True:
 
 ## Distance to line from the barge point
 	try:
+		if(ST.BlueList!= 0 or ST.RedList != 0) :
+			ST.distance2Line = -cv2.pointPolygonTest(ST.BlueList[0],(ST.RedList[0],ST.RedList[1]),True)
+			print("Distance...." , (ST.distance2Line+lastdistance)/2)
+			ST.differenceLine = np.abs(ST.distance2Line-lastdistance)
+			lastdistance = ST.distance2Line;
 
-		ST.distance2Line = -cv2.pointPolygonTest(ST.BlueList[0],(ST.RedList[0],ST.RedList[1]),True)
-		print("Distance...." , (ST.distance2Line+lastdistance)/2)
-		ST.differenceLine = np.abs(ST.distance2Line-lastdistance)
-		lastdistance = ST.distance2Line;
+		else:
+			ST.distance2Line  = 0;
 
 		pass
 		#distance2Line = #norm(np.cross(point1_obj2-point1,point2_obj2-point1))/norm(point2_obj2-point1_obj2)    
