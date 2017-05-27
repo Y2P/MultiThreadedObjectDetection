@@ -22,11 +22,11 @@ iLastX=-1
 iLastY=-1
 
 #Windows
-cv2.namedWindow("Original Image")
+#cv2.namedWindow("Original Image")
 cv2.namedWindow('controller')
 cv2.namedWindow('controller-2')
-cv2.namedWindow('thresholded')
-cv2.namedWindow('thresholded-2')
+#cv2.namedWindow('thresholded')
+#cv2.namedWindow('thresholded-2')
 cv2.namedWindow("temp")
 ST.SetTrackBarsRed()
 ST.SetTrackBarsBlue()
