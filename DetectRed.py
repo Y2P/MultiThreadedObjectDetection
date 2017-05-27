@@ -92,7 +92,7 @@ def FindRedObject(frame,hsv):
 		# Compose a unit vector for the line
 		unitvec = [np.sin(theta_rad),-np.cos(theta_rad)]
 		# Calculated the length of the line
-		length = 0.25*np.sqrt(np.absolute(ellipse[1][0]*ellipse[1][0] - ellipse[1][1]*ellipse[1][1]))
+		length = 0.3*np.sqrt(np.absolute(ellipse[1][0]*ellipse[1][0] - ellipse[1][1]*ellipse[1][1]))
 		# Calculate the line points
 		offset = np.multiply(unitvec,length)    
 
