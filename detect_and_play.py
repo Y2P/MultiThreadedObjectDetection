@@ -91,6 +91,7 @@ while True:
 
 ## Distance to line from the barge point
 	try:
+		print("Aman da ellipse canım ellipse",ST.RedList)
 		if(ST.BlueList!= 0 or ST.RedList != 0) :
 			ST.distance2Line = -cv2.pointPolygonTest(ST.BlueList[0],(ST.RedList[0],ST.RedList[1]),True)
 			print("Distance...." , (ST.distance2Line+lastdistance)/2)
