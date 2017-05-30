@@ -126,7 +126,7 @@ def FindRedObject(frame,hsv):
 		#cv2.imshow("temp",frame)
 		#out.write(frame)
 	except:
-		print("Object Red is not detected")
+		#print("Object Red is not detected")
 		ST.RedList = 0;
 
 	#end = time.time()

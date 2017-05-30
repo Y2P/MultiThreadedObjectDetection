@@ -99,7 +99,7 @@ def FindBlueObject(frame,hsv):
 
 		ST.BlueList = listed
 	except:
-		print("Object Blue is not detected")
+		#print("Object Blue is not detected")
 		ST.BlueList = 0
 	#return listed
 	#end = time.time()
