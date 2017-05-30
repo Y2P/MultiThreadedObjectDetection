@@ -22,7 +22,7 @@ def SetTrackBarsRed():
 	cv2.setTrackbarPos('Shigh','controller',255)
 	cv2.setTrackbarPos('Vhigh','controller',255)
 	cv2.setTrackbarPos('Hlow','controller',0)
-	cv2.setTrackbarPos('Vlow','controller',62)
+	cv2.setTrackbarPos('Vlow','controller',90)
 	cv2.setTrackbarPos('Slow','controller',93)
 
 
@@ -31,7 +31,7 @@ def SetTrackBarsKernel():
 	cv2.createTrackbar('Kernel Size','controller',1,15,nothing)
 	cv2.setTrackbarPos('Kernel Size','controller',3)
 	cv2.createTrackbar('Kernel2 Size','controller',1,15,nothing)
-	cv2.setTrackbarPos('Kernel2 Size','controller',12)
+	cv2.setTrackbarPos('Kernel2 Size','controller',14)
 
 # create trackbars for 1st obj
 
