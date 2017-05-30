@@ -91,7 +91,7 @@ while True:
 
 ## Distance to line from the barge point
 	try:
-		print("A::",ST.RedList)
+		#print("A::",ST.RedList)
 		if( ST.RedList != 0) :
 			ST.distance2Line = -cv2.pointPolygonTest(ST.BlueList[0],(ST.RedList[0],ST.RedList[1]),True)
 			print("Distance...." , (ST.distance2Line+lastdistance)/2)
@@ -99,7 +99,7 @@ while True:
 			lastdistance = ST.distance2Line;
 
 		else:
-			print("No barge or boru detected")
+			#print("No barge or boru detected")
 			ST.distance2Line  = 0;
 
 		pass

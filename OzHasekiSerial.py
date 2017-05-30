@@ -29,7 +29,7 @@ def ComLoop(SentMessage1,SentMessage2):
 		lock.acquire()
 		#print("Message waiting")
 		mess = ser.readline()
-		print("Message is read",mess)
+		#print("Message is read",mess)
 		ser.write(str(ST.distance2Line))
 		lock.release()
 
