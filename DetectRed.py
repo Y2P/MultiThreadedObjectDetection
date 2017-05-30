@@ -123,7 +123,7 @@ def FindRedObject(frame,hsv):
 		ST.RedList = point1
 		# Draw the line
 		A = cv2.line(SR.frame,(int(point1_obj1[0]),int(point1_obj1[1])),(int(point2_obj1[0]),int(point2_obj1[1])),(255,255,0),2)
-		#cv2.imshow("temp",frame)
+		cv2.imshow("thresholded-2",thresh)
 		#out.write(frame)
 	except:
 		#print("Object Red is not detected")
