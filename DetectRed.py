@@ -112,7 +112,7 @@ def FindRedObject(frame,hsv):
 
 		#slope = offset[1]/offset[0]
 
-		point1 = point1_obj1 + point2_obj2;
+		point1 = ellipse[0]
 		#if slope>0:
 		#	point1=point1_obj1
 		#else:
