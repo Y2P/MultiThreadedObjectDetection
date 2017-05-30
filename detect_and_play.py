@@ -98,6 +98,7 @@ while True:
 			lastdistance = ST.distance2Line;
 
 		else:
+			print("No barge or boru detected")
 			ST.distance2Line  = 0;
 
 		pass
